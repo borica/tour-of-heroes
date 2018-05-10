@@ -1,0 +1,14 @@
+<div id="search-component">
+    <div class="dropdown">
+        <div class="input-group">
+            <form class="form-inline">
+                <input (keyup)="search(searchBox.value)" type="text" #searchBox id="search-box" class="form-control bg-dark dropdown-toggle text-white" type="text" placeholder="Search" aria-label="Search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div *ngIf="searchBox" class="dropdown-menu" style="width: 192px;" aria-labelledby="search-box">
+                    <a *ngFor="let hero of heroes$ | async"  class="dropdown-item" routerLink="/detail/{{hero.id}}">
+                        {{hero.name}}
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

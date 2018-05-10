@@ -1,0 +1,19 @@
+.skill-img {
+	height: 20px;
+}
+
+.skill-img-background {
+	display: inline;
+	min-width: 57;
+	padding: 10px;
+	border-radius: 10%;
+}
+
+.hero-img {
+	width: 100%;
+	height: auto;
+}
+
+.bg-hanamura {
+	background-image: url('assets/bg-hanamura.jpg');
+}

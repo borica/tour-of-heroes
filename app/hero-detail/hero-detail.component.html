@@ -1,0 +1,56 @@
+<app-breadcrumb></app-breadcrumb>
+<div *ngIf="hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="card">
+<!-- 				<div class="card-header"><h5 class="card-title text-center">{{ hero.name }} - {{ hero.role }}</h5></div> -->
+					<div class="card-body">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="card bg-hanamura text-white">
+									<img class="card-img hero-img responsive-img mt-4" src="assets/characters/full-images/{{hero.image}}" alt="Card image">
+								</div>
+							</div>
+							<div class="col-md-8">
+								<h1><div class="row align-items-center"><i class="material-icons" style="font-size: 42px;" data-toggle="tooltip" data-placement="left" title="Tooltip on left">person_pin</i><span class="ml-2">{{hero.realName}} - {{hero.name}}</span></div></h1>
+								<ul class="list-group list-group-flush mt-4">
+									<li class="list-group-item"><div class="row align-items-center"><i class="material-icons">room</i><span class="ml-2"><b> Base of Operations: </b>{{hero.baseOfOp}}</span></div></li>
+									<li class="list-group-item"><div class="row align-items-center"><i class="material-icons">work</i><span class="ml-2"><b> Occupation: </b>{{hero.occupation}}</span></div></li>
+									<li class="list-group-item"><div class="row align-items-center"><i class="material-icons">contact_mail</i><span class="ml-2"><b> Affiliation: </b>{{hero.affiliation}}</span></div></li>
+								</ul>
+								<h5 class="mt-4">Description</h5>
+								<p class="card-text mt-1">{{hero.desc}}</p>
+							</div>
+						</div>
+					</div>
+<!-- 					<div class="card-footer text-muted"> -->
+<!-- 						<button class="btn btn-primary" (click)="goBack()"><div class="row align-items-center pl-3 pr-3"><i class="material-icons">arrow_back</i><span> Go Back </span></div></button> -->
+<!-- 					</div> -->
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card" style="border: 0px !important;">
+					<div class="card-header text-center border-top border-left border-right border-bottom-0"><h5 class="card-title"><span>Skills</span></h5></div>
+					<div class="card-body" style="padding: 0px;">
+						<div class="list-group">
+							<div *ngFor="let skill of hero.skills">
+								<a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample{{skill.id}}" role="button" aria-expanded="false" aria-controls="collapseExample"><div class="skill-img-background bg-primary"><img class="skill-img" src="assets/skills/{{skill.image}}"></div><span class="ml-3">{{skill.name}}</span></a>
+								<div class="collapse" id="collapseExample{{skill.id}}">
+									<div class="card card-body">{{skill.desc}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	$( document ).ready(function() {
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		})
+	});
+</script>

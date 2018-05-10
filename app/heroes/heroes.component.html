@@ -1,0 +1,40 @@
+<section role="heroes" class="background">
+    <app-jumbotron></app-jumbotron>
+    <!--<label>Hero name:
+        <input #heroName />
+    </label>
+     (click) passes input value to add() and then clears the input 
+    <button (click)="add(heroName.value); heroName.value=''">
+        Add
+    </button>-->
+    <div class="container charactersWrapper">
+        <div>
+            <!--<li *ngFor="let hero of heroes">
+                <a routerLink="/detail/{{hero.id}}">
+                    <span class="badge">{{hero.id}}</span> {{hero.name}}
+                </a>
+                <button class="delete" title="delete hero"(click)="delete(hero)">Del</button>
+            </li>-->
+
+            <div class="row">
+                <div *ngFor="let hero of heroes" class="col-md-3 p-2">
+                    <button type="button" class="close deleteButton" (click)="delete(hero)" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="card">
+                        <img class="card-img-top characterImg" src="assets/characters/{{hero.image}}" alt="Character Image">
+                        <div class="card-body">
+                            <hr>
+                            <h5 class="card-title">{{hero.name}}</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <div class="row">
+                            <a href="/detail/{{hero.id}}" class="btn btn-secondary w-100 m-2">See More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>
